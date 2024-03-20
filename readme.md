@@ -32,7 +32,3 @@ The project architecture closely aligns with this schematic, often in a 1:1 corr
 ## Data Hygiene:
 
 Clearing the stage after ingestion is vital. Post-ingestion, a delete command is executed on the associated S3 bucket linked to the stage.
-
----
-
-**Note**: This architectural design functions seamlessly when the Lambda or Glue code itself initiates the stored procedure, as in our context. However, manual triggering of stored procedures by individuals can lead to potential conflicts. Specifically, in situations where diverse data sources merge into one, Snowflake updates only one file log if multiple individuals concurrently activate the stored procedure.

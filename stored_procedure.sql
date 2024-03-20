@@ -20,6 +20,5 @@ SET COUNTS_AFTER_INGESTION = c.ROW_COUNT
 FROM TEMP_COUNTS AS c
 WHERE f.FILE_ID = c.FILE_ID;
 
--- Return a success message
 RETURN 'Data ingestion and counts update completed successfully.';
 $$;
